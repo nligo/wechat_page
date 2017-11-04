@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>答题通</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+<link rel="stylesheet" href="../style/swiper.min.css">
+<link rel="stylesheet" href="../style/common.css">
+<link rel="stylesheet" href="../style/weui.css">
+<link rel="stylesheet" href="../style/somePage.css">
+<script src="./js/jquery-2.1.4.js"></script>
+<script src="./js/swiper.min.js"></script>
+</head>
+<body class="mistakes">
+<!-- header单标题公共组件start -->
+<div class="header clearfix">
+	<h3>
+		<em>错题本</em> 
+		<span class="object">数学</span>
+		共(
+		<span class="num">27</span>
+		)题
+	</h3>
+	<div class="header-img">
+		<img src="images/ic_nav_bar.png" alt="">
+	</div>
+</div>
+<!-- header单标题公共组件end -->
+<!-- 考题content start -->
+<div class="mistakes-content">
+	<div class="weui-cells">
+		<div class="weui-form-preview">
+			<div class="weui-form-preview__hd">
+				<em class="quesetion-title">
+					<span>1.&nbsp;&nbsp;</span><span>若分式 有意义，则 x 的取值范围是 &nbsp;（ &nbsp; ）</span>
+				</em>
+				<p class="answer">
+					<span>A. x≠1</span>
+					<span>B. x>1</span>
+					<span>C. x=1</span>
+					<span>D. x<1</span>
+				</p>
+			</div>
+			<div class="weui-form-preview__ft">
+				<a class="weui-form-preview__btn weui-form-preview__btn_primary" href="javascript:">答案讲解</a>
+				<button type="submit" class="weui-form-preview__btn weui-form-preview__btn_default showAndroidDialog1" href="javascript:">加错本题</button>
+			</div>
+		</div>
+	</div>
+	<div class="weui-cells">
+		<div class="weui-form-preview">
+			<div class="weui-form-preview__hd">
+				<em class="quesetion-title">
+					<span>1.&nbsp;&nbsp;</span><span>若分式 有意义，则 x 的取值范围是 &nbsp;（ &nbsp; ）</span>
+				</em>
+				<p class="answer">
+					<span>A. x≠1</span>
+					<span>B. x>1</span>
+					<span>C. x=1</span>
+					<span>D. x<1</span>
+				</p>
+			</div>
+			<div class="weui-form-preview__ft">
+				<a class="weui-form-preview__btn weui-form-preview__btn_primary" href="javascript:">答案讲解</a>
+				<button type="submit" class="weui-form-preview__btn weui-form-preview__btn_default showAndroidDialog1" href="javascript:">加错本题</button>
+			</div>
+		</div>
+	</div>
+	<div class="weui-cells">
+		<div class="weui-form-preview">
+			<div class="weui-form-preview__hd">
+				<em class="quesetion-title">
+					<span>1.&nbsp;&nbsp;</span><span>若分式 有意义，则 x 的取值范围是 &nbsp;（ &nbsp; ）</span>
+				</em>
+				<p class="answer">
+					<span>A. x≠1</span>
+					<span>B. x>1</span>
+					<span>C. x=1</span>
+					<span>D. x<1</span>
+				</p>
+			</div>
+			<div class="weui-form-preview__ft">
+				<a class="weui-form-preview__btn weui-form-preview__btn_primary" href="javascript:">答案讲解</a>
+				<button type="submit" class="weui-form-preview__btn weui-form-preview__btn_default showAndroidDialog1" href="javascript:">加错本题</button>
+			</div>
+		</div>
+	</div>
+	<div class="weui-cells">
+		<div class="weui-form-preview">
+			<div class="weui-form-preview__hd">
+				<em class="quesetion-title">
+					<span>1.&nbsp;&nbsp;</span><span>若分式 有意义，则 x 的取值范围是 &nbsp;（ &nbsp; ）</span>
+				</em>
+				<p class="answer">
+					<span>A. x≠1</span>
+					<span>B. x>1</span>
+					<span>C. x=1</span>
+					<span>D. x<1</span>
+				</p>
+			</div>
+			<div class="weui-form-preview__ft">
+				<a class="weui-form-preview__btn weui-form-preview__btn_primary" href="javascript:">答案讲解</a>
+				<button type="submit" class="weui-form-preview__btn weui-form-preview__btn_default showAndroidDialog1" href="javascript:">加错本题</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- 考题content end -->
+<!-- 底部tab-bar公共组件start -->
+<div id="topNav" class="swiper-container">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide active"><span>数学</span></div>
+    <div class="swiper-slide"><span>语文</span></div>
+    <div class="swiper-slide"><span>物理</span></div>
+    <div class="swiper-slide"><span>地理</span></div>
+    <div class="swiper-slide"><span>政治</span></div>
+    <div class="swiper-slide"><span>化学</span></div>
+    <div class="swiper-slide"><span>英语</span></div>
+    <div class="swiper-slide"><span>生物</span></div>
+  </div>
+</div>
+<!-- 底部tab-bar公共组件end -->
+<script type="text/javascript">
+	var mySwiper = new Swiper('#topNav', {
+		freeMode: true,
+		freeModeMomentumRatio: 0.5,
+		slidesPerView: 'auto',
+	});
+
+	swiperWidth = mySwiper.container[0].clientWidth
+	maxTranslate = mySwiper.maxTranslate();
+	maxWidth = -maxTranslate + swiperWidth / 2
+
+	$(".swiper-container").on('touchstart', function(e) {
+		e.preventDefault()
+	})
+
+mySwiper.on('tap', function(swiper, e) {
+	e.preventDefault()
+	slide = swiper.slides[swiper.clickedIndex]
+	slideLeft = slide.offsetLeft
+	slideWidth = slide.clientWidth
+	slideCenter = slideLeft + slideWidth / 2
+	// 被点击slide的中心点
+
+	mySwiper.setWrapperTransition(300)
+	if (slideCenter < swiperWidth / 2) {
+		mySwiper.setWrapperTranslate(0)
+	} else if (slideCenter > maxWidth) {
+		mySwiper.setWrapperTranslate(maxTranslate)
+	} else {
+		nowTlanslate = slideCenter - swiperWidth / 2
+		mySwiper.setWrapperTranslate(-nowTlanslate)
+	}
+	$("#topNav  .active").removeClass('active')
+	$("#topNav .swiper-slide").eq(swiper.clickedIndex).addClass('active')
+})
+</script>
+</body>
+</html>

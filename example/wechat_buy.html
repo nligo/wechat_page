@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+	<title>微信订购</title>
+	<link rel="stylesheet" href="../style/weui.css" />
+	<link rel="stylesheet" href="../style/common.css" />
+	<link rel="stylesheet" href="../style/somePage.css" />
+	<script src="./js/jquery-2.1.4.js"></script>
+	<script src="./js/jquery-weui.js"></script>
+</head>
+<body ontouchstart class="phone_buy">
+	<!-- header单标题公共组件start -->
+	<div class="header clearfix">
+		<h3>
+			<em>开通服务</em> 
+		</h3>
+		<div class="header-img">
+			<img src="images/ic_nav_bar.png" alt="">
+		</div>
+	</div>
+	<!-- header单标题公共组件end -->
+	<!--mainStart-->
+	<div class="main-body wechat_buy">
+		<div class="weui-panel weui-panel_access">
+			<div class="weui-panel__hd">选择会员套餐</div>
+			<div class="weui-panel__bd">
+				<a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+					<div class="selected_choose weui-flex">
+						<div class="weui-media-box__bd weui-flex__item">
+							<h4 class="weui-media-box__title">6个月</h4>
+							<p class="weui-media-box__desc">10元/月</p>
+						</div>
+						<div class="weui-media-box__bd_right weui-flex__item" id="money_6m"><span class="money_6m">￥80</span></div>
+					</div>
+				</a>
+				<a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg active">
+					<div class="selected_choose weui-flex" >
+						<div class="weui-media-box__bd weui-flex__item">
+							<h4 class="weui-media-box__title " style="float:left;">12个月</h4><img src="images/im_recommend.png" style="width:30pt;">
+							<p class="weui-media-box__desc">10元/月</p>
+						</div>
+						<div class="weui-media-box__bd_right weui-flex__item"><s class="dis_sla">￥180</s><span class="money_6m">￥120</span></div>
+						<img src="images/im_selected.png" alt="" class="selected_img">
+					</div>
+				</a>
+			</div>
+		</div>
+		<!--会员权益----张恒-->
+		<div class="member">
+			<h4>会员权益：</h4>
+			<ul style="margin-bottom: 65px;padding-bottom: 30px;">
+				<li>支付成功后，会员服务即时生效；</li>
+				<li>会员免费享受答题通提供的全部服务；</li>
+				<li>关注公众号后，每周接收经典习题推送；</li>
+				<li>详情可联系客服 <a href="tel:4008-266-777">4008-266-777</a>。</li>
+			</ul>
+		</div>
+		<!--微信支付按钮----张恒-->
+		<div class="footer-pay">
+			<div class="member">
+				<div class="pay-left">总价：
+					<i id="sum_money">120</i>元
+					<a class="weui-btn weui-btn_primary">
+						微信支付
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--mainEnd-->
+<script type="text/javascript" src="https://res.wx.qq.com/open/libs/weuijs/1.0.0/weui.min.js"></script>
+<script>
+	$(function(){
+		//点击选中套餐;
+		$(".weui-panel__bd a").on('click',function () {
+			$(".selected_img").remove();
+			$(this).addClass("active").siblings().removeClass("active");
+			var img = $('<img src="images/im_selected.png" alt="" class="selected_img">');
+			$(this).append(img);
+			var money = $(this).find(".money_6m").text().replace("￥","");
+			$("#sum_money").text(money);
+		})
+	})
+</script>
+</body>
+</html>

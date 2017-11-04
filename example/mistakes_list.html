@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+	<title>错题本</title>
+	<link rel="stylesheet" href="../style/weui.css" />
+	<link rel="stylesheet" href="../style/index.css" />
+	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="./js/fastclick.js"></script>
+	<script src="./js/jquery-2.1.4.js"></script>
+	<script src="./js/jquery-weui.js"></script>
+</head>
+<body ontouchstart class="mistakes_list">
+	<!--headerStart-->
+	<div class="header">
+		<p class="header-title">错题本 数学 (共<span>27</span>题)</p>
+		<img class="header-icon" src="images/ic_nav_bar.png" alt="" />
+	</div>
+	<!--headerEnd-->
+	<!--mainStart-->
+	<div class="main-body">
+		<div class="weui-cells">
+			<div class="weui-form-preview">
+				<div class="weui-form-preview__hd">
+				<em class="quesetion-title">
+					<span>1.&nbsp;&nbsp;</span><span>若分式 有意义，则 x 的取值范围是 &nbsp;（ &nbsp; ）</span>
+				</em>
+				<p>
+					<span>A. x≠1</span>
+					<span>B. x>1</span>
+					<span>C. x=1</span>
+					<span>D. x<1</span>
+				</p>
+				</div>
+				<div class="weui-form-preview__ft">
+				<a class="weui-form-preview__btn weui-form-preview__btn_primary" href="javascript:">答案讲解</a>
+				<button type="submit" class="weui-form-preview__btn weui-form-preview__btn_default" href="javascript:">移出错本题</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--mainEnd-->
+	<!-- footerStart -->
+	<div class="weui-tabbar footerStart">
+		
+	</div>
+	<!-- footerEnd -->
+	<script type="text/javascript" src="https://res.wx.qq.com/open/libs/weuijs/1.0.0/weui.min.js"></script>
+	<script>
+	$(function(){
+		//点击显示弹窗
+		$("#showAndroidDialog1").on('click', function () {
+			$("#androidDialog12").css({
+            	"display": "block",
+                "opacity": 1
+			})
+        })
+        //点击隐藏弹窗
+        $(".weui-mask , .cancel_icon").on('click', function () {
+            $("#androidDialog12").css({
+                "display": "none",
+                "opacity": 0
+            })
+		})
+		//动态添加
+		var footerStart = $(".footerStart");
+		var testArr = ['数学','语文','物理','历史','英语','化学'];
+		for(var i = 0; i<testArr.length; i++){
+			var tab_item = '<a href="javascript:;" class="mistakes_bar">'+testArr[i]+'</a>'
+			footerStart.append(tab_item);
+		}
+
+		/*list ===>*/
+		// footerStart.find('a').eq(0).find('p').addClass('active');
+		// footerStart.find('a').eq(0).find('span').addClass('chart-bottom');
+		// footerStart.find('a').click(function () {
+		// 	footerStart.find('a p').removeClass('active');
+		// 	footerStart.find('a span').removeClass('chart-bottom');
+		// 	$(this).find('p').addClass('active');
+		// 	$(this).find('span').addClass('chart-bottom')
+
+		// })
+	})
+</script>
+</body>
+</html>

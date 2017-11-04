@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+	<title>试题主页</title>
+	<link rel="stylesheet" href="../style/weui.css" />
+	<link rel="stylesheet" href="../style/index.css" />
+	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="./js/fastclick.js"></script>
+	<script src="./js/jquery-2.1.4.js"></script>
+	<script src="./js/jquery-weui.js"></script>
+</head>
+
+<body ontouchstart class="personal-data">
+	<!--headerStart-->
+	<div class="head">
+		<div class="head-title">
+			<span class="head-title"></span>
+			<h2 class="big-title">个人资料</h2>
+		</div>
+		<a href="javascript:;" class="weui-btn1 weui-btn_default1" id="showAndroidDialog1">
+			<img class="head-icon" src="images/ic_nav_bar.png" alt="" />
+		</a>
+	</div>
+	<!--headerEnd-->
+	<!--mainStart-->
+	<div class="main-body">
+		<div class="maintab">
+			<div class="weui-tabbar">
+				<ul class="tabtitle" id="ul_content">
+					
+				</ul>
+			</div>
+			<div class="tabcontent">
+				选择内容1
+			</div>
+			<div class="tabcontent" style="DISPLAY: none">
+				选择内容2
+			</div>
+			<div class="tabcontent" style="DISPLAY: none">
+				选择内容3
+			</div>
+			<div class="tabcontent" style="DISPLAY: none">
+				选择内容4
+			</div>
+			<div class="tabcontent" style="DISPLAY: none">
+				选择内容5
+			</div>
+		</div>
+	</div>
+	<!--mainEnd-->
+	<script>
+		$(document).ready(function () {
+			//mock数据动态加载tab长度;
+			var arr = ["选择题","选择题","选择题","选择题","选择题","选择题"];
+			var ul_Dom = $("#ul_content");
+
+            //动态添加
+            var testArr = ['数学','语文','物理','历史','英语','化学'];
+            for(var i = 0; i<testArr.length; i++){
+                var tab_item = '<li class="taba weui-tabbar__item">'+
+                    '<p class="weui-tabbar__label">'+testArr[i]+'</p>'+
+                    '<span class="chart-bottom"></span>'+
+                    '</li>'
+                ul_Dom.append(tab_item)
+            }
+			
+			//点击tab切换相应的面板;
+			$('.tabtitle li').click(function () {
+				var index = $(this).index();
+//				$(this).attr('class', "tabhover").siblings('li').attr('class', 'taba');
+				$('.tabcontent').eq(index).show(200).siblings('.tabcontent').hide();
+			});
+			//点击tab添加or去除选中效果;
+			// $(".weui-tabbar__item").on('click', function(){
+			// 	$(".chart-bottom").removeClass("chart-bottom");
+			// 	$(this).addClass("weui-bar__item_on").siblings().removeClass("weui-bar__item_on");
+			// 	$(this).children('span').addClass("chart-bottom");
+			// })
+
+		
+		})
+	</script>
+	<script type="text/javascript" src="https://res.wx.qq.com/open/libs/weuijs/1.0.0/weui.min.js"></script>
+</body>
+
+</html>

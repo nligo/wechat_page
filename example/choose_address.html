@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+	<title>完善资料</title>
+	<link rel="stylesheet" href="../style/weui.css" />
+	<link rel="stylesheet" href="../style/index.css" />
+	<link rel="stylesheet" href="../style/reset.css" />
+	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="./js/fastclick.js"></script>
+	<script src="./js/jquery-2.1.4.js"></script>
+	<script src="./js/jquery-weui.js"></script>
+</head>
+<body ontouchstart class="choose_address">
+	<!--mainStart-->
+	<div class="main-body">
+		<div class="choose_address_head">
+			<div class="choose_city" id="choose_city"><span>选择所在市</span><img src="../example/images/img_pack.png" alt="" class="icon_pack"></div>
+			<div class="choose_area" id="choose_area"><span>选择区/县</span><img src="../example/images/img_pull.png" alt="" class="icon_pull"></div>
+		</div>
+		<div>
+			<ul>
+				<li>11111111111111111111</li>
+				<li>11111111111111111111</li>
+				<li>11111111111111111111</li>
+				<li>11111111111111111111</li>
+			</ul>
+		</div>
+
+		<!-- 显示地市 -->
+		<div class="show-city" style="display:none;">
+			<ul class="clearfix">
+				<!-- <li class="city-item">西安市</li>
+				<li class="city-item">安康市</li>
+				<li class="city-item">上海市</li>
+				<li class="city-item">西安市</li>
+				<li class="city-item">安康市</li>
+				<li class="city-item">上海市</li>
+				<li class="city-item">西安市</li>
+				<li class="city-item">安康市</li>
+				<li class="city-item">上海市</li>
+				<li class="city-item">西安市</li>
+				<li class="city-item">安康市</li>
+				<li class="city-item">上海市</li> -->
+			</ul>
+			<div class="shade-panle"></div>
+		</div>
+		<!-- 显示县区 -->
+		<div class="show-area" style="display:none;">
+			<ul class="clearfix">
+				<li class="city-item">阎良区</li>
+				<li class="city-item">安康市</li>
+				<li class="city-item">上海市</li>
+				<li class="city-item">西安市</li>
+				<li class="city-item">安康市</li>
+				<li class="city-item">上海市</li>
+				<li class="city-item">西安市</li>
+				<li class="city-item">安康市</li>
+				<li class="city-item">上海市</li>
+				<li class="city-item">西安市</li>
+				<li class="city-item">安康市</li>
+				<li class="city-item">上海市</li>
+			</ul>
+			<div class="shade-panle"></div>
+		</div>
+	</div>
+	<!--mainEnd-->
+	<script type="text/javascript" src="https://res.wx.qq.com/open/libs/weuijs/1.0.0/weui.min.js"></script>
+	<script>
+		$(function(){
+			var obj = {"西安市":["阎良","咸阳","兴平","长武","铜川","宝鸡"]}
+					// 	{"西安市1":["阎良1","咸阳1","兴平1","长武","铜川","宝鸡"]},
+					// 	{"西安市2":["阎良2","咸阳2","兴平2","长武","铜川","宝鸡"]},
+					// ]
+			var show_city = $(".show-city ul")
+			for(var i in obj){
+				console.log(obj);
+				var creat_city = '<li class="city-item">'+obj[i]+'</li>';
+				show_city.append(creat_city)
+			}
+
+
+
+			$("#choose_city").on('click', function(){
+				$(".show-area").fadeOut();
+				$(".show-city").slideToggle();
+				var choose_box = $("#choose_city span");
+				$(".show-city .city-item").on('click', function(){
+					var choose_val = $(this).text()
+					choose_box.text(choose_val);
+					$(".show-city").slideUp();
+				})
+			})
+
+			$("#choose_area").on('click', function(){
+				$(".show-city").fadeOut();
+				$(".show-area").slideToggle();
+				var choose_box = $("#choose_area span");
+				$(".show-area .city-item").on('click', function(){
+					var choose_val = $(this).text()
+					choose_box.text(choose_val);
+					$(".show-area").slideUp();
+				})
+			})
+		})
+	</script>
+</body>
+</html>
